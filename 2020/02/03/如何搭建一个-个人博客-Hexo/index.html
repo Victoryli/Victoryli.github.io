@@ -16,7 +16,7 @@
 <meta property="og:description" content="这里是在 macOS 上进行搭建的，其他系统大体步骤差不多 安装 Node.js去 Nodejs 官网或者点击 Node.js 下载安装包安装安装完成后，检查一下 node 和 npm 的版本，如果能正确显示版本号，则说明安装成功。 1234sh-3.2# node -vv10.16.1sh-3.2# npm -v6.9.0 安装 cnpmcnpm 是淘宝 npm 镜像，相比于 npm 下载安装软">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-03T02:28:02.000Z">
-<meta property="article:modified_time" content="2020-02-03T03:10:36.091Z">
+<meta property="article:modified_time" content="2020-02-03T03:15:07.073Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -220,18 +220,13 @@
 <li><p>进入 blog 目录，修改 _config.yml，添加 GitHub 仓库地址，添加内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;Victoryli&#x2F;Victoryli.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">- 将博客部署到GitHub</span><br></pre></td></tr></table></figure>
 <p>hexo d</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在浏览器地址栏输入 Victoryli.github.io 即可访问博客</span><br><span class="line"></span><br><span class="line">### 更改博客主题</span><br><span class="line">比如选一个 yilia 主题</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在浏览器地址栏输入 Victoryli.github.io 即可访问博客</span><br><span class="line">### 更改博客主题</span><br><span class="line">比如选一个 yilia 主题</span><br></pre></td></tr></table></figure>
 <p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改 _config.yml</span><br></pre></td></tr></table></figure>
 <h1 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h1><h2 id="Plugins-https-hexo-io-plugins"><a href="#Plugins-https-hexo-io-plugins" class="headerlink" title="Plugins: https://hexo.io/plugins/"></a>Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a></h2><h2 id="Themes-https-hexo-io-themes"><a href="#Themes-https-hexo-io-themes" class="headerlink" title="Themes: https://hexo.io/themes/"></a>Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></h2><p>theme: yilia</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">重新部署一下博客</span><br></pre></td></tr></table></figure>
 <p>hexo clean<br>hexo g -d</p>
-<pre><code>此时博客主题更新完成
-
-
-
-
-</code></pre></li>
+<pre><code>此时博客主题更新完成</code></pre></li>
 </ul>
 
       
