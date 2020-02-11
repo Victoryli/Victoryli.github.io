@@ -204,59 +204,9 @@
       
         <p>这里是在 macOS 上进行搭建的，其他系统大体步骤也差不多</p>
 <h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>去 Nodejs 官网或者点击 <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a> 下载安装包安装<br>安装完成后，检查一下 node 和 npm 的版本，如果能正确显示版本号，则说明安装成功。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# node -v</span><br><span class="line">v10.16.1</span><br><span class="line">sh-3.2# npm -v</span><br><span class="line">6.9.0</span><br></pre></td></tr></table></figure>
-<h3 id="安装-cnpm"><a href="#安装-cnpm" class="headerlink" title="安装 cnpm"></a>安装 cnpm</h3><p>cnpm 是淘宝 npm 镜像，相比于 npm 下载安装软件速度更快,下面的安装步骤尽量在超级用户下进行。<br>切换到超级用户<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure><br>安装 cnpm</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry-https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>安装 cnpm 时注意最好用 -g 参数安装，这是全局安装的意思</p>
-</blockquote>
-<p>查看一下 cnpm 的版本号,证明安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# cnpm -v</span><br><span class="line">cnpm@6.1.1 (&#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;cnpm&#x2F;lib&#x2F;parse_argv.js)</span><br><span class="line">npm@6.13.7 (&#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;cnpm&#x2F;node_modules&#x2F;npm&#x2F;lib&#x2F;npm.js)</span><br><span class="line">node@10.16.1 (&#x2F;usr&#x2F;local&#x2F;bin&#x2F;node)</span><br><span class="line">npminstall@3.27.0 (&#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;cnpm&#x2F;node_modules&#x2F;npminstall&#x2F;lib&#x2F;index.js)</span><br><span class="line">prefix&#x3D;&#x2F;usr&#x2F;local </span><br><span class="line">darwin x64 17.5.0 </span><br><span class="line">registry&#x3D;https:&#x2F;&#x2F;r.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="生成博客"><a href="#生成博客" class="headerlink" title="生成博客"></a>生成博客</h3><ul>
-<li><p>本地新建一个文件夹，用于保存博客，这里新建一个 blog 文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure></li>
-<li><p>安装 git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-<p>查看 git 版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# git --version</span><br><span class="line">git version 2.22.0</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化一个 Hexo 博客</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p>这一步会自动 git clone 一个项目。如果出现 timeout 现象,先 ping github.com</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping github.com</span><br></pre></td></tr></table></figure>
-<p>如果 ping 不通，则修改一下 hosts</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;hosts</span><br></pre></td></tr></table></figure>
-<p>在文件末尾添加如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.30.253.113 github.com</span><br></pre></td></tr></table></figure></li>
-<li><p>启动博客</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>在浏览器地址栏输入  <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 会出现一个标题为 <strong>Hello World</strong> 的博客页面</p>
-</li>
-<li><p>新建一篇文章</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;博客测试&quot;</span><br></pre></td></tr></table></figure>
-<p>会在 source/_post 目录下自动创建一个名为 “博客测试.md”的文件，这里在用 markdown 语法添加文件内容即可</p>
-</li>
-<li><p>生成博客<br>在 blog 目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>生成完后，可以输入 hexo s 命令本地查看一下博客效果</p>
-<h3 id="部署博客到-github"><a href="#部署博客到-github" class="headerlink" title="部署博客到 github"></a>部署博客到 github</h3></li>
-<li><p>在自己的 GitHub 仓库中新建一个仓库，<strong>仓库名必须为 “用户名.github.io”</strong>,例如我这里命名为 <em>Victoryli.github.io</em></p>
-</li>
-<li><p>安装 git 部署插件<br>进入 blog 目录下进行安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure></li>
-<li><p>进入 blog 目录，修改 _config.yml，添加 GitHub 仓库地址，添加内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;Victoryli&#x2F;Victoryli.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">- 将博客部署到GitHub</span><br></pre></td></tr></table></figure>
-<p>hexo d</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在浏览器地址栏输入 Victoryli.github.io 即可访问博客</span><br><span class="line">### 更改博客主题</span><br><span class="line">比如选一个 yilia 主题</span><br></pre></td></tr></table></figure>
-<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改 _config.yml</span><br></pre></td></tr></table></figure>
-<h1 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h1><h2 id="Plugins-https-hexo-io-plugins"><a href="#Plugins-https-hexo-io-plugins" class="headerlink" title="Plugins: https://hexo.io/plugins/"></a>Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a></h2><h2 id="Themes-https-hexo-io-themes"><a href="#Themes-https-hexo-io-themes" class="headerlink" title="Themes: https://hexo.io/themes/"></a>Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></h2><p>theme: yilia</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">重新部署一下博客</span><br></pre></td></tr></table></figure>
-<p>hexo clean<br>hexo g -d</p>
-<pre><code>此时博客主题更新完成</code></pre></li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2020/02/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-Hexo/#more">more >></a>
+        
       
 
       
